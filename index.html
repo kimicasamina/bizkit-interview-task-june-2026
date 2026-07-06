@@ -75,11 +75,14 @@
         return;
       }
       const days = dayCount(from, to);
+
       if (days < 1) {
+
         totalEl.textContent = "Total: PHP 0.00";
         return;
       }
       const total = equipment.daily_rate * days;
+
       totalEl.textContent = `Total: PHP ${total.toFixed(2)} (${days} day${days > 1 ? "s" : ""})`;
     }
 
@@ -112,6 +115,7 @@
     }
 
     document.getElementById("equipment").addEventListener("change", updateTotal);
+    document.getElementById("to").addEventListener("change", updateTotal);
     document.getElementById("from").addEventListener("change", updateTotal);
     document.getElementById("book").addEventListener("click", createBooking);
 
